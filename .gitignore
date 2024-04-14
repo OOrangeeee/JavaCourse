@@ -1,0 +1,103 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+*.iws
+
+# Eclipse specific files
+.classpath
+.project
+.settings/
+
+# NetBeans specific files
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# VS Code specific files
+.vscode/
+
+# gradle specific files
+.gradle/
+
+# maven specific files
+target/
+
+# Temporary files
+*~
+*.swp
+*.swo
+*.swm
+*.bak
+*.orig
+*.rej
+*.pyc
+*.pyo
+*.exe
+*.dll
+*.test
+*.out
+*.recovery
+*.dat
+*.aux
+*.lof
+*.lol
+*.lot
+*.fmt
+*.tfm
+*.sty
+*.cb
+*.cb2
+*.cbl
+*.lo
+*.la
+*.o
+*.so
+*.al
+*.libs
+*.so.[0-9]*
+*.a
+*.keep
+*.release
+*.metadata
+*.retry
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+package-lock.json
+package.json
+
+node_modules/
