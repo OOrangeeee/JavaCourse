@@ -42,8 +42,6 @@ public class IndexBuilder extends AbstractIndexBuilder {
             AbstractDocument document = docBuilder.build(docId++, filePath, file);
             index.addDocument(document);
         }
-        File indexFile = new File(Config.INDEX_DIR + "index.res");
-        index.save(indexFile);
         return index;
     }
 }
