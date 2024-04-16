@@ -11,14 +11,29 @@ import java.io.File;
 import java.util.*;
 
 /**
+ * IndexSearcher类是AbstractIndexSearcher的具体实现。
+ * 它提供了根据一个或两个查询词来搜索索引，并返回排序后的命中结果的功能。
+ *
  * @author 晋晨曦
  */
 public class IndexSearcher extends AbstractIndexSearcher {
+    /**
+     * 打开索引文件并加载索引。
+     *
+     * @param indexFile 索引文件的路径
+     */
     @Override
     public void open(String indexFile) {
         index.load(new File(indexFile));
     }
 
+    /**
+     * 根据一个查询词搜索索引，并返回排序后的命中结果。
+     *
+     * @param queryTerm 查询词
+     * @param sorter    排序器
+     * @return 排序后的命中结果
+     */
     @Override
     public AbstractHit[] search(AbstractTerm queryTerm, Sort sorter) {
         AbstractPostingList postingList = index.search(queryTerm);
@@ -39,6 +54,15 @@ public class IndexSearcher extends AbstractIndexSearcher {
         return hits;
     }
 
+    /**
+     * 根据两个查询词和一个逻辑组合方式搜索索引，并返回排序后的命中结果。
+     *
+     * @param queryTerm1 第一个查询词
+     * @param queryTerm2 第二个查询词
+     * @param sorter     排序器
+     * @param combine    逻辑组合方式
+     * @return 排序后的命中结果
+     */
     @Override
     public AbstractHit[] search(AbstractTerm queryTerm1, AbstractTerm queryTerm2, Sort sorter, LogicalCombination combine) {
         AbstractPostingList postingList1 = index.search(queryTerm1);

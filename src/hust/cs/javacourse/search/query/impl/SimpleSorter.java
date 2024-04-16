@@ -3,6 +3,7 @@ package hust.cs.javacourse.search.query.impl;
 import hust.cs.javacourse.search.index.AbstractPosting;
 import hust.cs.javacourse.search.index.AbstractTerm;
 import hust.cs.javacourse.search.query.AbstractHit;
+import hust.cs.javacourse.search.query.Sort;
 
 import java.util.Collections;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.Map;
  *
  * @author 晋晨曦
  */
-public class SimpleSorter implements hust.cs.javacourse.search.query.Sort {
+public class SimpleSorter implements Sort {
     /**
      * 对搜索结果进行排序的方法。使用Java的内置排序函数，根据搜索结果的得分进行降序排序。
      *
