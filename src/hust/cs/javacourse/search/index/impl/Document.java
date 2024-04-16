@@ -3,6 +3,7 @@ package hust.cs.javacourse.search.index.impl;
 import hust.cs.javacourse.search.index.AbstractDocument;
 import hust.cs.javacourse.search.index.AbstractTermTuple;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,6 +14,34 @@ import java.util.List;
  * @author 晋晨曦
  */
 public class Document extends AbstractDocument {
+    /**
+     * 默认构造函数，创建一个新的 Document 对象，但不初始化任何字段。
+     */
+    public Document() {
+
+    }
+
+    /**
+     * 创建一个新的 Document 对象，并初始化其 docId 和 docPath 字段。
+     *
+     * @param docId   文档的 ID
+     * @param docPath 文档的绝对路径
+     */
+    public Document(int docId, String docPath) {
+        super(docId, docPath);
+    }
+
+    /**
+     * 创建一个新的 Document 对象，并初始化其 docId，docPath 和 tuples 字段。
+     *
+     * @param docId   文档的 ID
+     * @param docPath 文档的绝对路径
+     * @param tuples  文档包含的词元三元组列表
+     */
+    public Document(int docId, String docPath, List<AbstractTermTuple> tuples) {
+        super(docId, docPath, tuples);
+    }
+
     /**
      * 获取文档的ID。
      *

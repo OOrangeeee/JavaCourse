@@ -17,6 +17,24 @@ import java.util.List;
  */
 public class Posting extends AbstractPosting {
     /**
+     * 默认构造函数，创建一个新的 Posting 对象，但不初始化任何字段。
+     */
+    public Posting() {
+
+    }
+
+    /**
+     * 创建一个新的 Posting 对象，并初始化其字段。
+     *
+     * @param docId     包含单词的文档的 ID
+     * @param freq      单词在文档中出现的频率
+     * @param positions 单词在文档中出现的位置列表
+     */
+    public Posting(int docId, int freq, List<Integer> positions) {
+        super(docId, freq, positions);
+    }
+
+    /**
      * 判断两个Posting对象是否相等。
      * 如果两个Posting对象的文档ID、频率和位置列表都相同，则它们相等。
      *

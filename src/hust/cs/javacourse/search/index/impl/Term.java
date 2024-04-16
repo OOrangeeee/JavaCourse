@@ -16,6 +16,14 @@ import java.io.ObjectOutputStream;
  */
 public class Term extends AbstractTerm {
     /**
+     * Term类的默认构造函数。
+     * 它初始化一个没有内容的Term的新实例。
+     */
+    public Term() {
+
+    }
+
+    /**
      * 构造函数，创建一个新的Term对象。
      *
      * @param content 词项的内容

@@ -11,6 +11,14 @@ import hust.cs.javacourse.search.index.AbstractTermTuple;
  */
 public class TermTuple extends AbstractTermTuple {
     /**
+     * TermTuple类的默认构造函数。
+     * 它初始化一个没有内容的TermTuple的新实例。
+     */
+    public TermTuple() {
+
+    }
+
+    /**
      * 判断两个TermTuple对象是否相等。
      * 如果两个TermTuple对象的词项和当前位置相同，则它们相等。
      *

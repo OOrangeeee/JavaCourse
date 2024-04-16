@@ -23,6 +23,13 @@ import java.util.List;
  */
 public class PostingList extends AbstractPostingList {
     /**
+     * 无参构造函数
+     */
+    public PostingList() {
+
+    }
+
+    /**
      * 添加一个posting到list中
      * <p>
      * 如果list中已经包含该posting，则不添加
@@ -184,7 +191,7 @@ public class PostingList extends AbstractPostingList {
      * 从ObjectInputStream读取一个对象，并将其转换为List<AbstractPosting>类型。
      *
      * @param in ObjectInputStream对象，用于读取对象
-     * @throws ClassCastException     如果读取的对象不是List<AbstractPosting>类型
+     * @throws ClassCastException 如果读取的对象不是List<AbstractPosting>类型
      */
     @Override
     public void readObject(ObjectInputStream in) {
