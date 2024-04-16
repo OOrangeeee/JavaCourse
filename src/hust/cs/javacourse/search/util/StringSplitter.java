@@ -47,8 +47,9 @@ public class StringSplitter {
         //取得最后一部分
         if(lastEnd < input.length()){
             part = input.substring(lastEnd);
-            if(part != null && !part.equals(""))
+            if(part != null && !part.equals("")) {
                 list.add(part);
+            }
         }
 
         return list;
