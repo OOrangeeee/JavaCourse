@@ -20,6 +20,7 @@ public class DocumentBuilder extends AbstractDocumentBuilder {
     @Override
     public AbstractDocument build(int docId, String docPath, AbstractTermTupleStream termTupleStream) {
         List<AbstractTermTuple> newList = new ArrayList<>();
+        // 读取termTupleStream中的所有termTuple
         while (true) {
             AbstractTermTuple termTuple = termTupleStream.next();
             if (termTuple == null) {
@@ -34,6 +35,7 @@ public class DocumentBuilder extends AbstractDocumentBuilder {
     @Override
     public AbstractDocument build(int docId, String docPath, File file) {
         try {
+            // 装饰者模式实例化termTupleStream
             AbstractTermTupleStream termTupleStream = new StopWordTermTupleFilter(new PatternTermTupleFilter(new LengthTermTupleFilter(new TermTupleScanner(new BufferedReader(new FileReader(file))))));
             return build(docId, docPath, termTupleStream);
         } catch (FileNotFoundException e) {
