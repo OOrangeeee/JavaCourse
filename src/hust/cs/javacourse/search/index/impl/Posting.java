@@ -5,7 +5,9 @@ import hust.cs.javacourse.search.index.AbstractPosting;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Posting类是AbstractPosting的具体实现，表示倒排索引中的一个项。
@@ -50,7 +52,9 @@ public class Posting extends AbstractPosting {
             return false;
         }
         Posting posting = (Posting) obj;
-        return docId == posting.docId && freq == posting.freq && positions.equals(posting.positions);
+        Set<Integer> positions1 = new HashSet<>(positions);
+        Set<Integer> positions2 = new HashSet<>(posting.positions);
+        return docId == posting.docId && freq == posting.freq && positions1.equals(positions2);
     }
 
     /**
