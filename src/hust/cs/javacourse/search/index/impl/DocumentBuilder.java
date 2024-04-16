@@ -14,9 +14,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * DocumentBuilder类是AbstractDocumentBuilder的具体实现，用于构建文档。
+ * 它可以从给定的文件或TermTupleStream构建文档。
+ * 在构建文档时，它会使用一系列的过滤器来过滤TermTupleStream，包括长度过滤器、模式过滤器和停用词过滤器。
+ *
  * @author 晋晨曦
  */
 public class DocumentBuilder extends AbstractDocumentBuilder {
+    /**
+     * 从给定的TermTupleStream构建文档。
+     *
+     * @param docId           文档的ID。
+     * @param docPath         文档的路径。
+     * @param termTupleStream 包含文档的TermTuple的TermTupleStream。
+     * @return 构建的文档。
+     */
     @Override
     public AbstractDocument build(int docId, String docPath, AbstractTermTupleStream termTupleStream) {
         List<AbstractTermTuple> newList = new ArrayList<>();
@@ -32,6 +44,14 @@ public class DocumentBuilder extends AbstractDocumentBuilder {
         return new Document(docId, docPath, newList);
     }
 
+    /**
+     * 从给定的文件构建文档。
+     *
+     * @param docId   文档的ID。
+     * @param docPath 文档的路径。
+     * @param file    包含文档内容的文件。
+     * @return 构建的文档。
+     */
     @Override
     public AbstractDocument build(int docId, String docPath, File file) {
         try {
