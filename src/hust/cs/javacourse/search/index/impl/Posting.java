@@ -20,7 +20,7 @@ public class Posting extends AbstractPosting {
      * 默认构造函数，创建一个新的 Posting 对象，但不初始化任何字段。
      */
     public Posting() {
-
+        super();
     }
 
     /**

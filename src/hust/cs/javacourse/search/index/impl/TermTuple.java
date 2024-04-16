@@ -15,7 +15,7 @@ public class TermTuple extends AbstractTermTuple {
      * 它初始化一个没有内容的TermTuple的新实例。
      */
     public TermTuple() {
-
+        super();
     }
 
     /**

@@ -26,7 +26,7 @@ public class PostingList extends AbstractPostingList {
      * 无参构造函数
      */
     public PostingList() {
-
+        super();
     }
 
     /**

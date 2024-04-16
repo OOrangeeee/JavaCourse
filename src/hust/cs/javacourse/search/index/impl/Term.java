@@ -20,7 +20,7 @@ public class Term extends AbstractTerm {
      * 它初始化一个没有内容的Term的新实例。
      */
     public Term() {
-
+        super();
     }
 
     /**

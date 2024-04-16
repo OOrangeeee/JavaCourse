@@ -18,7 +18,7 @@ public class Document extends AbstractDocument {
      * 默认构造函数，创建一个新的 Document 对象，但不初始化任何字段。
      */
     public Document() {
-
+        super();
     }
 
     /**
