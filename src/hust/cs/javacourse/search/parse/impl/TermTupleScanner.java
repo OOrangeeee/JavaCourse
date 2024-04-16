@@ -63,6 +63,9 @@ public class TermTupleScanner extends AbstractTermTupleScanner {
             }
             words = splitter.splitByRegex(line);
         }
+        if (Config.IGNORE_CASE) {
+            words.replaceAll(String::toLowerCase);
+        }
         String word = words.remove(0);
         AbstractTermTuple ans = new TermTuple();
         ans.term = new Term(word);
