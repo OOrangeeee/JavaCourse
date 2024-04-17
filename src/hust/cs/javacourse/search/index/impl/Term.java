@@ -58,9 +58,7 @@ public class Term extends AbstractTerm {
      */
     @Override
     public String toString() {
-        return "Term{" +
-                "content='" + content + '\'' +
-                '}';
+        return content;
     }
 
     /**

@@ -51,7 +51,7 @@ public class TermTupleScanner extends AbstractTermTupleScanner {
      */
     @Override
     public AbstractTermTuple next() {
-        if (words.isEmpty()) {
+        while (words.isEmpty()) {
             String line = null;
             try {
                 line = input.readLine();
@@ -61,18 +61,23 @@ public class TermTupleScanner extends AbstractTermTupleScanner {
             if (line == null) {
                 return null;
             }
-            words = splitter.splitByRegex(line);
+            if (!line.trim().isEmpty()) {
+                words = splitter.splitByRegex(line);
+            }
         }
         if (Config.IGNORE_CASE) {
             words.replaceAll(String::toLowerCase);
         }
-        String word = words.remove(0);
-        AbstractTermTuple ans = new TermTuple();
-        ans.term = new Term(word);
-        ans.curPos = pos;
-        pos++;
-        return ans;
+        if (!words.isEmpty()) {
+            String word = words.remove(0);
+            AbstractTermTuple ans = new TermTuple();
+            ans.term = new Term(word);
+            ans.curPos = pos++;
+            return ans;
+        }
+        return null;
     }
+
 
     /**
      * 关闭输入流
